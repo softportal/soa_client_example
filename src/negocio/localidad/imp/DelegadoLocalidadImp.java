@@ -11,7 +11,7 @@ import negocio.localidad.TLocalidad;
 public class DelegadoLocalidadImp extends DelegadoLocalidad {
 	
 	protected final static String url= "http://localhost:8080/soa_rest/servicios/localidad/wsb";
-	protected final static String url2= "http://localhost:8080/soa_rest/servicios/saludo/wsb/json";
+	protected final static String url2= "http://localhost:8080/soa_rest/servicios/localidad/wsb/json";
 
 	@Override
 	public String read_get_id(String id) {
@@ -51,7 +51,7 @@ public class DelegadoLocalidadImp extends DelegadoLocalidad {
 	public String insert_put(TLocalidad l) {
 		Client cliente = ClientBuilder.newClient();
 
-		String res= cliente.target(url2).request(MediaType.APPLICATION_JSON).put(Entity.json(l), String.class);
+		String res= cliente.target(url2).request(MediaType.TEXT_PLAIN).put(Entity.json(l), String.class);
 		
 		cliente.close();
 		

@@ -19,7 +19,7 @@ import negocio.saludo.Saludo;
 public class DelegadoSaludoImp extends DelegadoSaludo {
 
 		
-	protected final static String url= "http://localhost:8080/soa_rest/servicios/saludo/wsb";
+	protected final static String url = "http://localhost:8080/soa_rest/servicios/saludo/wsb";
 	protected final static String url2= "http://localhost:8080/soa_rest/servicios/saludo/wsb/json";
 
 	@Override
