@@ -57,6 +57,28 @@ public class DelegadoLocalidadImp extends DelegadoLocalidad {
 		
 		return res;
 	}
+	@Override
+	public String update_post(String id, String nombre, String longitud, String latitud, String activo) {
+		// TODO Auto-generated method stub
+		Client cliente = ClientBuilder.newClient();
+		String data = id+", "+nombre+", "+longitud+", "+latitud+", "+activo;
+		String 	res= cliente.target(url+ "/update").request().post(Entity.text(data), String.class);
+		cliente.close();
+
+		return res;
+	}
+	@Override
+	public String delete_post(String id) {
+		// TODO Auto-generated method stub
+		Client cliente = ClientBuilder.newClient();
+		
+		String 	res= cliente.target(url+ "/delete").request().post(Entity.text(id), String.class);
+
+		cliente.close();
+		
+		return res;
+	}
+	
 
 
 }
